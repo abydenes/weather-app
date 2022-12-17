@@ -1,3 +1,176 @@
-p {
-  color: red;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.form-control {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  
+}
+
+input[type="text"] {
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 70%;
+}
+
+/* CHECKBOX START */
+
+/* Hide the checkbox */
+.units-toggle-input {
+  display: none;
+}
+
+/* Style the toggle label */
+.units-toggle-label {
+  position: relative; /* position the label relative to its parent element */
+  display: inline-block; /* display as an inline block */
+  cursor: pointer; /* change cursor to pointer on hover */
+  transition: all 0.2s; /* add a transition for the label */
+  font-size: 14px; /* set font size */
+  color: #333; /* set text color */
+}
+
+/* Style the toggle label when checked */
+.units-toggle-input:checked + .units-toggle-label {
+  color: white; /* change label text color when checked */
+}
+
+/* Style the toggle label text */
+.units-toggle-label-text {
+  display: inline-block; /* display as an inline block */
+  width: 40px; /* set width */
+  height: 20px; /* set height */
+  line-height: 20px; /* vertically center the label text */
+  text-align: center; /* center the label text */
+  border-radius: 20px; /* add rounded corners */
+  background-color: #ccc; /* set background color */
+  transition: all 0.2s; /* add a transition for the label text */
+}
+
+/* Style the toggle label text when checked */
+.units-toggle-input:checked + .units-toggle-label .units-toggle-label-text {
+  background-color: #333; /* change label text background color when checked */
+}
+
+/* Style the toggle label text when not checked */
+.units-toggle-input:not(:checked) + .units-toggle-label .units-toggle-label-text::before {
+  content: "C"; /* change label text when not checked */
+}
+
+/* Style the toggle label text when checked */
+.units-toggle-input:checked + .units-toggle-label .units-toggle-label-text::before {
+  content: "F"; /* change label text when checked */
+}
+
+/* Style the input box */
+.form-control {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  position: relative; /* position the input box relative to its parent element */
+}
+
+input[type="text"] {
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 70%;
+}
+
+/* Style the toggle label text to appear inside the input box */
+.form-control .units-toggle-label-text {
+  position: absolute; /* position the label text absolute to the input box */
+  right: 10px; /* set right position */
+  top: -5px; /* set top position */
+  transform: translateY(-50%); /* vertically center the label text */
+}
+
+/* CHECKBOX END  */
+
+/* LOADING START */
+.loading {
+  display: none; /* initially hidden */
+  width: 100%; /* take up full width of parent element */
+  height: 100%; /* take up full height of parent element */
+  position: absolute; /* position on top of other elements */
+  top: 0;
+  left: 0;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* semi-transparent white background */
+  z-index: 9999; /* high z-index to ensure it appears on top of other elements */
+}
+
+/* Add a spinner or loading indicator */
+.loading::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -20px; /* negative half of the spinner's height */
+  margin-left: -20px; /* negative half of the spinner's width */
+  width: 40px;
+  height: 40px;
+  border: 8px solid #333;
+  border-radius: 50%;
+  border-top-color: #f3f3f3;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* LOADING END  */
+
+.search-btn {
+  font-size: 16px;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.results-container {
+  width: 300px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.results-container p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+

@@ -8,6 +8,20 @@
     <script src="bundle.js" defer></script>
   </head>
   <body>
-    <p class="testing">teeeesttt</p>
+    <div class="form-container">
+      <div class="form-control">
+        <input type="text" name="" id="search" placeholder="Input location" />
+        <div class="units-toggle-container">
+          <input type="checkbox" id="units-toggle" class="units-toggle-input">
+          <label for="units-toggle" class="units-toggle-label">
+            <span class="units-toggle-label-text"></span>
+          </label>
+        </div>
+
+        <button class="search-btn">search</button>
+      </div>
+      <div class="loading"></div>
+      <div class="results-container"></div>
+    </div>
   </body>
 </html>
